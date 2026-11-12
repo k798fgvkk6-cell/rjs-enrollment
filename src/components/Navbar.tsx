@@ -52,7 +52,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnroll, onOpenPortal }) =>
               <span>Portal Demo</span>
             </button>
             <a
-              href="portal.html"
+              href="https://k798fgvkk6-cell.github.io/rjs-mechanical-desk-portal/"
               className="inline-flex items-center justify-center gap-2 px-3 sm:px-3.5 py-2 text-xs font-mono font-semibold tracking-wider uppercase text-emerald-400 hover:text-emerald-300 bg-emerald-950/20 hover:bg-emerald-900/35 border border-emerald-500/40 hover:border-emerald-400/80 rounded-lg transition-all duration-200 shadow-sm"
             >
               <span className="relative flex h-2 w-2">
@@ -79,4 +79,5 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnroll, onOpenPortal }) =>
       </header>
     </>
   );
+};
 };
