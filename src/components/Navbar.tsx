@@ -80,4 +80,3 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnroll, onOpenPortal }) =>
     </>
   );
 };
-};
