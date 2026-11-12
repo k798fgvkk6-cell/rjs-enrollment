@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ryan Jade Student Portal | Enrolled Access</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-color: #050507;
+      color: #e4e4e7;
+      font-family: 'Inter', sans-serif;
+    }
+    .font-cinzel { font-family: 'Cinzel', serif; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+  </style>
+</head>
+<body class="min-h-screen bg-[#050507] text-zinc-200 antialiased selection:bg-emerald-500/30">
+  <!-- Header -->
+  <header class="border-b border-zinc-800/80 bg-[#07080b]/90 backdrop-blur-md sticky top-0 z-30">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex flex-col">
+        <span class="font-cinzel text-lg font-black tracking-widest text-white">RYAN JADE</span>
+        <span class="font-mono text-[9px] tracking-widest text-emerald-400 uppercase -mt-0.5">STUDENT PORTAL • PRIVATE VAULT</span>
+      </a>
+      <div class="flex items-center gap-3">
+        <div class="flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/40 border border-emerald-500/40 text-xs font-mono text-emerald-400">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>MEMBER ACCESS</span>
+        </div>
+        <a href="index.html" class="text-xs font-mono text-zinc-400 hover:text-white px-3 py-1.5 rounded-lg border border-zinc-800 hover:border-zinc-700 transition">
+          &larr; Back to Main Desk
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Body -->
+  <main class="max-w-4xl mx-auto px-4 py-12">
+    <div class="text-center mb-10">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-xs font-mono text-zinc-400 mb-4">
+        <span>ENROLLED TRADER CLEARANCE TERMINAL</span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">
+        Ryan Jade Student Portal
+      </h1>
+      <p class="text-zinc-400 text-sm max-w-xl mx-auto">
+        Enter your single-word session keyword or enrolled student credentials to access private 9:30 PM execution modules and trading logs.
+      </p>
+    </div>
+
+    <!-- Verification Card -->
+    <div class="bg-[#0b0c10] border border-zinc-800 rounded-2xl p-6 sm:p-8 max-w-lg mx-auto shadow-2xl">
+      <div class="flex items-center justify-between pb-4 border-b border-zinc-800/80 mb-6">
+        <span class="text-xs font-mono text-zinc-400 uppercase">ACCESS PROTOCOL</span>
+        <span class="text-xs font-mono text-emerald-400">SECURE DISPATCH</span>
+      </div>
+
+      <div class="space-y-4">
+        <div>
+          <label class="block text-xs font-mono text-zinc-300 uppercase mb-2">Student Verification Keyword</label>
+          <input
+            id="keywordInput"
+            type="text"
+            placeholder="e.g. LIQUIDITY, DISPLACEMENT, BIAS..."
+            class="w-full bg-[#12131a] border border-zinc-700 rounded-xl px-4 py-3 text-sm font-mono text-white placeholder-zinc-500 focus:outline-none focus:border-emerald-500"
+          />
+        </div>
+
+        <button
+          id="verifyBtn"
+          class="w-full py-3.5 rounded-xl font-mono text-xs font-bold uppercase tracking-wider bg-emerald-500 hover:bg-emerald-400 text-black transition shadow-lg shadow-emerald-950/40 cursor-pointer"
+        >
+          Verify & Unlock Vault
+        </button>
+
+        <div id="statusMsg" class="hidden p-3 rounded-xl text-xs font-mono"></div>
+      </div>
+
+      <div class="mt-6 pt-5 border-t border-zinc-800/80 text-center">
+        <p class="text-[11px] text-zinc-500">
+          Not yet enrolled? <a href="index.html#pricing" class="text-emerald-400 hover:underline">Enroll in Full Mentorship</a> or contact Ryan Jade directly on Telegram/Facebook.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const btn = document.getElementById('verifyBtn');
+    const input = document.getElementById('keywordInput');
+    const statusMsg = document.getElementById('statusMsg');
+
+    btn.addEventListener('click', () => {
+      const val = input.value.trim().toUpperCase();
+      statusMsg.classList.remove('hidden', 'bg-emerald-950/40', 'border-emerald-500/50', 'text-emerald-300', 'bg-amber-950/40', 'border-amber-500/50', 'text-amber-300');
+      statusMsg.classList.add('border');
+
+      if (!val) {
+        statusMsg.classList.add('bg-amber-950/40', 'border-amber-500/50', 'text-amber-300');
+        statusMsg.textContent = 'Please enter your enrolled secret verification keyword.';
+      } else {
+        statusMsg.classList.add('bg-emerald-950/40', 'border-emerald-500/50', 'text-emerald-300');
+        statusMsg.innerHTML = 'Keyword accepted: <strong>' + val + '</strong>. Connecting to private student drive and video vault...';
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "name": "RYAN JADE - Mechanical Trading Protocol & Discipline Mentorship",
+  "description": "Institutional mechanical execution desk. 1 trade a day, strict 9:30 PM rule, 1:3 RRR focus, and systematic 20-trade audited discipline mentorship.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
