@@ -26,7 +26,7 @@ export default function App() {
     setIsEnrollModalOpen(true);
   };
 
-  const handleOpenPortal = (module?: ModuleItem) => {
+   const handleOpenPortal = (module?: ModuleItem) => {
     setSelectedPortalModule(module || null);
     setIsPortalModalOpen(true);
   };
